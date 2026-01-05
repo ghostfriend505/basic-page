@@ -8,7 +8,6 @@ import {
   useParams,
 } from 'react-router-dom';
 
-import reportWebVitals from './reportWebVitals';
 import './app.css';
 
 /* -------------------- DATA -------------------- */
@@ -17,7 +16,7 @@ const challenges = [
   {
     name: "Unreal Engine",
     description: "Used to learn Game Development",
-    status: "Never Gonna be completed",
+    status: "Incomplete",
     days: 465,
     level: "Beginner to Medium",
     duration: "2021 - 2023",
@@ -28,7 +27,7 @@ const challenges = [
   {
     name: "Daz 3D",
     description: "Used to learn 3D Modelling and Animation",
-    status: "Same as first One",
+    status: "Incomplete",
     days: 400,
     level: "Beginner to Medium",
     duration: "2020 - 2023",
@@ -48,55 +47,65 @@ const challenges = [
   },
 ];
 
+/* -------------------- NAVBAR -------------------- */
+
+const NavBar = () => {
+  return (
+    <nav className="navbar">
+      <ul className="nav-list">
+        <li><NavLink className="nav-link" to="/">Home</NavLink></li>
+        <li><NavLink className="nav-link" to="/about">About</NavLink></li>
+        <li><NavLink className="nav-link" to="/why">Why</NavLink></li>
+        <li><NavLink className="nav-link" to="/contact">Contact</NavLink></li>
+        <li><NavLink className="nav-link" to="/challenge">Challenge</NavLink></li>
+      </ul>
+    </nav>
+  );
+};
+
 /* -------------------- PAGES -------------------- */
 
-const HomePage = () => {
-  return (
-    <div className="home-page">
-      <div className= "home">
-        <h1>Home Page</h1>
-      </div>
-      <div className="inside-home">
-        <p>Hello this is a website which is in progress</p>
-        <small>Stay Tuned with us</small>
-      </div>
+const HomePage = () => (
+  <div className="page home-page">
+    <div className="page-header">
+      <h1>Home Page</h1>
     </div>
-  );
-};
+    <div className="page-content">
+      <p>Hello this is a website which is in progress</p>
+      <small>Stay Tuned with us</small>
+    </div>
+  </div>
+);
 
-const AboutPage = () => {
-  return (
-    <div className="about-page">
-      <div className="about">
-        <h1>About Page</h1>
-      </div>
-
-      <div className="inside-about">
-      <p>
-        <strong>
-          Hello and welcome. I am Ujjwal Kumar learning React.
-        </strong>
-      </p>
+const AboutPage = () => (
+  <div className="page about-page">
+    <div className="page-header">
+      <h1>About Page</h1>
+    </div>
+    <div className="page-content">
+      <p><strong>Hello and welcome. I am Ujjwal Kumar learning React.</strong></p>
       <small>Stay Tuned for more</small>
-      </div>
-
     </div>
-  );
-};
+  </div>
+);
 
-const WhyPage = () => {
-  return (
-    <div>
+const WhyPage = () => (
+  <div className="page why-page">
+    <div className="page-header">
       <h1>Why Page</h1>
+    </div>
+    <div className="page-content">
       <p>Stop asking why and just do it.</p>
     </div>
-  );
-};
+  </div>
+);
 
-const ContactPage = () => {
-  return (
-    <div>
+const ContactPage = () => (
+  <div className="page contact-page">
+    <div className="page-header">
       <h1>Contact Page</h1>
+    </div>
+    <div className="page-content">
       <p>Email: ujjwal.kumar.2003@gmail.com</p>
       <p>
         Insta:{' '}
@@ -104,31 +113,20 @@ const ContactPage = () => {
           href="https://www.instagram.com/ujj_wal_kum_ar/"
           target="_blank"
           rel="noopener noreferrer"
+          className="contact-link"
         >
           Instagram
         </a>
       </p>
     </div>
-  );
-};
+  </div>
+);
 
-const NotFound = () => {
-  return <h1>404 – Page Not Found</h1>;
-};
-
-/* -------------------- NAVBAR -------------------- */
-
-const NavBar = () => {
-  return (
-    <ul>
-      <li><NavLink to="/">Home</NavLink></li>
-      <li><NavLink to="/about">About</NavLink></li>
-      <li><NavLink to="/why">Why</NavLink></li>
-      <li><NavLink to="/contact">Contact</NavLink></li>
-      <li><NavLink to="/challenge">Challenge</NavLink></li>
-    </ul>
-  );
-};
+const NotFound = () => (
+  <div className="page">
+    <h1>404 – Page Not Found</h1>
+  </div>
+);
 
 /* -------------------- CHALLENGE -------------------- */
 
@@ -139,38 +137,44 @@ const ChallengeDetail = () => {
   if (!challenge) return <NotFound />;
 
   return (
-    <div>
+    <div className="challenge-card">
       <h2>{challenge.name}</h2>
       <p>{challenge.description}</p>
-      <p> <strong>Status:</strong> {challenge.status}</p>
-      <p>Days: {challenge.days}</p>
-      <p>Level: {challenge.level}</p>
-      <p>Duration: {challenge.duration}</p>
-      <p>Author: {challenge.author}</p>
+      <p><strong>Status:</strong> {challenge.status}</p>
+      <p><strong>Days:</strong> {challenge.days}</p>
+      <p><strong>Level:</strong> {challenge.level}</p>
+      <p><strong>Duration:</strong> {challenge.duration}</p>
+      <p><strong>Author:</strong> {challenge.author}</p>
     </div>
   );
 };
 
-const Challenge = () => {
-  return (
-    <div>
+const Challenge = () => (
+  <div className="page challenge-page">
+    <div className="page-header">
       <h1>Challenge Page</h1>
+    </div>
 
+    <div className="challenge-list">
       <ul>
         {challenges.map(({ name, slug }) => (
           <li key={slug}>
-            <NavLink to={`/challenge/${slug}`}>{name}</NavLink>
+            <NavLink className="challenge-link" to={`/challenge/${slug}`}>
+              {name}
+            </NavLink>
           </li>
         ))}
       </ul>
+    </div>
 
+    <div className="challenge-detail">
       <Routes>
         <Route path=":slug" element={<ChallengeDetail />} />
         <Route path="" element={<h3>Select a challenge above</h3>} />
       </Routes>
     </div>
-  );
-};
+  </div>
+);
 
 /* -------------------- APP -------------------- */
 
@@ -194,5 +198,3 @@ const App = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
-
-reportWebVitals();
