@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+A beginner-friendly React.js application built to practice React Router v6, component structuring, and basic styling using CSS.
+This project demonstrates page navigation, dynamic routes, and reusable components.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📌 Features
 
-## Available Scripts
+⚛️ Built with React
 
-In the project directory, you can run:
+🧭 Client-side routing using React Router v6
 
-### `npm start`
+🔗 Dynamic routing with URL parameters
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🧩 Reusable components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🎨 Clean and simple CSS styling
 
-### `npm test`
+📄 Multiple pages:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Home
 
-### `npm run build`
+About
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Why
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contact
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Challenge (Dynamic)
 
-### `npm run eject`
+🛠️ Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+React Router DOM v6
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+JavaScript (ES6+)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🧭 Pages Overview
+🏠 Home
 
-## Learn More
+Introductory page with a welcome message.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ℹ️ About
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Brief description about the developer and learning journey.
 
-### Code Splitting
+❓ Why
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Motivational page with a simple message.
 
-### Analyzing the Bundle Size
+📞 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contains email and Instagram profile link.
 
-### Making a Progressive Web App
+🏆 Challenge
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Dynamic page that lists learning challenges:
 
-### Advanced Configuration
+Unreal Engine
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Daz 3D
 
-### Deployment
+Programming
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Clicking a challenge opens a dynamic route using URL parameters.
 
-### `npm run build` fails to minify
+🔄 Dynamic Routing Example
+<Route path="/challenge/:slug" element={<ChallengeDetail />} />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Uses useParams() to fetch challenge data based on URL.
+
+▶️ How to Run the Project
+
+Clone the repository
+
+git clone https://github.com/your-username/react-router-practice.git
+
+
+Install dependencies
+
+npm install
+
+
+Start the development server
+
+npm start
+
+
+Open in browser
+
+http://localhost:3000
+
+🎯 Purpose of This Project
+
+Learn React Router v6
+
+Understand dynamic routes using useParams
+
+Practice clean component structure
+
+Improve CSS organization
+
+Build confidence in React fundamentals
+
+👨‍💻 Author
+
+Ujjwal Kumar
+Learning React and front-end development 🚀
+
+📄 License
+
+This project is open-source and free to use for learning purposes.
+
+HTML5
+
+CSS3
